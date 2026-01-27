@@ -1,0 +1,121 @@
+{
+  "player": {
+    "moveSpeed": 5.0,
+    "maxHealth": 100,
+    "fireRate": 1.0,
+    "projectileSpeed": 7.0,
+    "projectileDamage": 10.0
+  },
+  
+  "enemies": [
+    {
+      "type": "Normal",
+      "moveSpeed": 2.0,
+      "maxHealth": 20,
+      "damage": 10,
+      "attackRange": 1.2,
+      "attackCooldown": 1.5,
+      "xpValue": 1,
+      "spawnWeight": 70
+    },
+    {
+      "type": "Fast", 
+      "moveSpeed": 3.0,
+      "maxHealth": 15,
+      "damage": 8,
+      "attackRange": 1.0,
+      "attackCooldown": 1.0,
+      "xpValue": 2,
+      "spawnWeight": 20
+    },
+    {
+      "type": "Shooter",
+      "moveSpeed": 1.5,
+      "maxHealth": 25,
+      "damage": 15,
+      "attackRange": 6.0,
+      "attackCooldown": 2.0,
+      "xpValue": 3,
+      "spawnWeight": 10,
+      "shootRange": 6.0,
+      "projectileSpeed": 6.0
+    }
+  ],
+  
+  "upgrades": [
+    {
+       "name": "Projectile",
+      "displayName": "Пули",
+      "icon": "projectile_icon",
+      "currentLevel": 0,
+      "maxLevel": 5,
+      "baseCost": 50,
+      "costMultiplier": 1.5,
+      "damagePerLevel": [5, 10, 15, 20, 25, 30],
+      "speedPerLevel": [1.0, 1.2, 1.4, 1.6, 1.8, 2.0],
+      "fireRatePerLevel": [1.0, 0.9, 0.8, 0.7, 0.6, 0.5],
+      "countPerLevel": [1, 1, 2, 2, 3, 3]
+    },
+    {
+      "name": "Aura",
+      "displayName": "Аура",
+      "icon": "aura_icon", 
+      "currentLevel": 0,
+      "maxLevel": 5,
+      "damagePerLevel": [2, 4, 6, 8, 10, 12],
+      "radiusPerLevel": [1.0, 1.5, 2.0, 2.5, 3.0, 3.5],
+      "slowPerLevel": [0.1, 0.15, 0.2, 0.25, 0.3, 0.35]
+    },
+    {
+      "name": "Melee",
+      "displayName": "Ближний бой",
+      "icon": "melee_icon",
+      "currentLevel": 0,
+      "maxLevel": 5,
+      "damagePerLevel": [8, 12, 16, 20, 24, 28],
+      "radiusPerLevel": [0.8, 1.0, 1.2, 1.4, 1.6, 1.8],
+      "attackIntervalPerLevel": [0.5, 0.45, 0.4, 0.35, 0.3, 0.25],
+      "knockbackPerLevel": [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+    },
+    {
+      "name": "Magnet",
+      "displayName": "Магнит",
+      "icon": "magnet_icon",
+      "currentLevel": 0,
+      "maxLevel": 5,
+      "radiusPerLevel": [2.0, 2.5, 3.0, 3.5, 4.0, 4.5],
+      "speedPerLevel": [3.0, 4.0, 5.0, 6.0, 7.0, 8.0]
+    },
+    {
+      "name": "Health",
+      "displayName": "Здоровье",
+      "icon": "health_icon",
+      "currentLevel": 0,
+      "maxLevel": 5,
+      "healthPerLevel": [100, 120, 140, 160, 180, 200],
+      "regenPerLevel": [0, 1, 2, 3, 4, 5]
+    },
+    {
+      "name": "Speed",
+      "displayName": "Скорость",
+      "icon": "speed_icon",
+      "currentLevel": 0,
+      "maxLevel": 5,
+      "speedPerLevel": [5.0, 5.5, 6.0, 6.5, 7.0, 7.5]
+    }
+  ],
+  
+  "waves": {
+    "baseEnemiesPerWave": 5,
+    "enemiesIncreasePerWave": 2,
+    "waveDuration": 30,
+    "waveCooldown": 5,
+    "bossWaveInterval": 5
+  },
+  
+  "experience": {
+    "baseXPPerLevel": 100,
+    "xpIncreasePerLevel": 50,
+    "maxLevel": 20
+  }
+}
