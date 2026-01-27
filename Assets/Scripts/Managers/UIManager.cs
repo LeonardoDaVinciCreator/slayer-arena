@@ -13,9 +13,21 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button _restartButton;
     [SerializeField] private Button _quitButton;    
 
+    [Header("UI Panels")]
+    [SerializeField] private GameObject _mainMenuPanel;
+    [SerializeField] private GameObject _pauseMenuPanel;
+    [SerializeField] private GameObject _levelUpPanel;
+    [SerializeField] private GameObject _gameOverPanel;    
+
     private void Start()
     {
         // Настройка кнопок
+        SetupButtons();        
+        
+    }
+
+    private void SetupButtons()
+    {
         if (_playButton != null)
             _playButton.onClick.AddListener(() => GameManager.Instance.StartGame());
         
@@ -38,7 +50,6 @@ public class UIManager : MonoBehaviour
             _restartButton.onClick.AddListener(() => GameManager.Instance.RestartGame());
         
         if (_quitButton != null)
-            _quitButton.onClick.AddListener(() => GameManager.Instance.QuitGame());        
-        
+            _quitButton.onClick.AddListener(() => GameManager.Instance.QuitGame());
     }
 }
