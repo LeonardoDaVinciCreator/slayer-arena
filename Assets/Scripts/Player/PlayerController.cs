@@ -202,16 +202,22 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator FlashEnemyOnHit(EnemyController enemy)
     {
+        // Проверяем, существует ли еще враг
+        if (enemy == null) yield break;
+        
         SpriteRenderer renderer = enemy.GetComponent<SpriteRenderer>();
-        if (renderer != null)
-        {
-            Color originalColor = renderer.color;
-            renderer.color = Color.red; // Красный при ударе
-            
-            yield return new WaitForSeconds(0.1f);
-            
-            renderer.color = originalColor; // Возвращаем исходный цвет
-        }
+        // Проверяем, существует ли еще рендерер
+        if (renderer == null) yield break;
+        
+        Color originalColor = renderer.color;
+        renderer.color = Color.red;
+        
+        yield return new WaitForSeconds(0.1f);
+        
+        // Проверяем, не уничтожен ли объект за время ожидания
+        if (enemy == null || renderer == null) yield break;
+        
+        renderer.color = originalColor;
     }
 
     private float _auraDamageTimer = 0f;
@@ -235,9 +241,8 @@ public class PlayerController : MonoBehaviour
             EnemyController enemy = hit.GetComponent<EnemyController>();
             if (enemy != null)
             {
-                hasEnemies = true;
-            
-                // Замедление (опционально)
+                hasEnemies = true;            
+                
                 enemy.ModifySpeed(0.7f); // Замедление на 30%
                 
                 // Периодический урон
@@ -246,7 +251,10 @@ public class PlayerController : MonoBehaviour
                     enemy.TakeDamage(_auraDamage);
                     
                     // Эффект ауры
+                    if (enemy != null)
+                {
                     StartCoroutine(FlashEnemyOnHit(enemy));
+                }
                 }
             }
         }
