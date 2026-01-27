@@ -139,7 +139,7 @@ MonoBehaviour:
   _attackRange: 1.2
   _attackCooldown: 1.5
   _experienceOrbPrefab: {fileID: 6239533053618002451, guid: 6928bd8e4cc1ced4d977c0ff884a7907, type: 3}
-  _baseMoveSpeed: 0
+  _baseMoveSpeed: 1.34
   _xpValue: 1
 --- !u!60 &-2831050625133310041
 PolygonCollider2D:
