@@ -1032,12 +1032,16 @@ public class GameManager : MonoBehaviour
 
     public void QuitGame()
     {
-        #if UNITY_EDITOR
+    #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-        #else
-            Application.Quit();
-        #endif
+    #elif UNITY_WEBGL
+        // Для WebGL перезагрузить страницу
+        Application.ExternalEval("window.location.reload()");
+    #else
+        Application.Quit();
+    #endif
     }
+
 
     private void SetPanelState(GameObject panel, bool isActive)
     {
