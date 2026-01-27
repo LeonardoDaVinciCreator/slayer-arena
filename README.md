@@ -73,62 +73,64 @@
 ---
 
 ## 🗂️ Архитектура проекта
-
+```
 Assets/
 │
 ├── Resources/
-│   ├── GameConfig.json          # Главный файл баланса и конфигурации
-│   └── Prefabs/
-│       ├── Enemies/             # Префабы врагов (Normal, Fast, Shooter)
-│       ├── Player/              # Префаб игрока
-│       └── Projectiles/         # Префабы снарядов
+│ ├── GameConfig.json // Главный файл баланса и конфигурации
+│ ├── Prefabs/
+│ │ ├── Enemies/ // Префабы врагов (Normal, Fast, Shooter)
+│ │ ├── Player/ // Префаб игрока
+│ │ ├── Projectiles/ // Префабы снарядов
 │
 ├── Scenes/
-│   └── MainScene.unity          # Основная сцена игры
+│ └── MainScene.unity // Основная сцена игры
 │
 ├── Scripts/
-│   ├── Combat/                  # Логика боевых систем
-│   │   ├── Projectile.cs        # Логика снарядов игрока
-│   │   ├── EnemyProjectile.cs   # Логика снарядов врагов
-│   │   ├── AuraRangeEffect.cs   # Аура урона и замедления
-│   │   └── MeleeRangeDetector.cs# Ближний бой и отбрасывание
-│   │
-│   ├── Data/                    # Классы данных и конфигурации
-│   │   ├── GameConfig.cs        # Корневой класс JSON-конфига
-│   │   ├── PlayerData.cs        # Статы игрока
-│   │   ├── EnemyData.cs         # Статы врагов
-│   │   ├── UpgradeData.cs       # Данные улучшений
-│   │   ├── WaveData.cs          # Параметры волн
-│   │   └── ExperienceData.cs    # Параметры прогрессии и опыта
-│   │
-│   ├── Enemy/                   # Поведение врагов
-│   │   ├── EnemyController.cs   # Базовый класс врага
-│   │   ├── EnemyFast.cs         # Быстрый враг
-│   │   └── EnemyShooter.cs      # Стреляющий враг
-│   │
-│   ├── Player/                  # Поведение игрока
-│   │   └── PlayerController.cs  # Движение, стрельба, взаимодействие
-│   │
-│   ├── ItemUI/                  # UI элементов прокачки
-│   │   └── UpgradeItemUI.cs     # Один элемент апгрейда в меню
-│   │
-│   ├── Managers/                # Центральные менеджеры игры
-│   │   ├── GameManager.cs       # Управление состоянием игры, UI, волнами, паузой
-│   │   └── GameConfigManager.cs # Загрузка и управление JSON-конфигурацией
-│   │
-│   └── Systems/                 # Вспомогательные игровые системы
-│       ├── ExperienceOrb.cs     # Сферы опыта и их притяжение
-│       ├── BulletPool.cs        # Object Pool для снарядов
-│       └── WaveSpawner.cs       # Система спавна врагов по волнам
-│
+│ ├── Combat/
+│ │ ├── Projectile.cs
+│ │ ├── EnemyProjectile.cs
+│ │
+│ ├── Data/
+│ │ ├── GameConfig.cs
+│ │ ├── PlayerData.cs
+│ │ ├── EnemyData.cs
+│ │ ├── UpgradeData.cs
+│ │ ├── WaveData.cs
+│ │ ├── ExperienceData.cs
+│ │
+│ ├── Enemy/
+│ │ ├── EnemyController.cs
+│ │ ├── EnemyFast.cs
+│ │ ├── EnemyShooter.cs
+│ │ ├── AuraRangeEffect.cs
+│ │ ├── MeleeRangeDetector.cs
+│ │
+│ ├── ItemUI/
+│ │ └── UpgradeItemUI.cs
+│ │
+│ ├── Managers/
+│ │ ├── GameConfigManager.cs
+│ │ ├── UIManager.cs
+│ │ ├── GameManager.cs
+│ │
+│ ├── Player/
+│ │ ├── PlayerDetections.cs
+│ │ └── PlayerController.cs
+│ │
+│ ├── Systems/
+│ │ ├── BulletPool.cs
+│ │ ├── ExperienceOrb.cs
+│ 
 └── UI/
-    ├── HUD/                     # Основной интерфейс (HP, XP, волна)
-    ├── LevelUpPanel/            # Панель выбора улучшений
-    ├── PauseMenu/               # Меню паузы
-    └── GameOverPanel/           # Экран окончания игры
+├── HUD/ // Основной интерфейс (HP, XP, волна)
+├── LevelUpPanel/ // Панель выбора улучшений
+├── PauseMenu/ // Меню паузы
+├── MainMenu/ // Главное меню
+└── GameOverPanel/ // Экран окончания игры
 
 
-
+```
 ---
 
 ## 🤖 Использование AI
@@ -154,7 +156,7 @@ Assets/
 - Добавление Object Pool для снарядов
 - Использование Input System
 - Интеграция Cinemachine
-- Переработка Data-классов
+- Создание Data-классов
 - Проектирование JSON-структуры
 - Замена публичных полей на private + Properties
 - Настройка объектов и UI-компонентов
@@ -190,5 +192,6 @@ Assets/
 2. Открыть проект в Unity
 3. Открыть сцену MainScene
 4. Нажать ▶ Play
-
+### Через itch.io:
+https://leonardodidavinci.itch.io/slayer-arena
 ---
