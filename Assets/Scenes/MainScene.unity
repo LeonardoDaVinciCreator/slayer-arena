@@ -5045,6 +5045,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7179951990738803268, guid: df1ef38323721e54a85b078c1a49e020, type: 3}
+      propertyPath: _baseShootRadius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179951990738803268, guid: df1ef38323721e54a85b078c1a49e020, type: 3}
       propertyPath: _projectilePrefab
       value: 
       objectReference: {fileID: 7814078016452192148, guid: c31126d879033154589f822b40e8b1b7, type: 3}
@@ -5818,7 +5822,6 @@ MonoBehaviour:
   _gameOverPanel: {fileID: 1188774974}
   _upgradesContent: {fileID: 1652456837}
   _upgradeItemPrefab: {fileID: 5775486053466184280, guid: 7351777feeee418448e558f457c53299, type: 3}
-  _uiManager: {fileID: 2121871296}
 --- !u!114 &2121871296
 MonoBehaviour:
   m_ObjectHideFlags: 0

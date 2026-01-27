@@ -4,7 +4,7 @@
     "maxHealth": 100,
     "fireRate": 1.0,
     "projectileSpeed": 7.0,
-    "projectileDamage": 10.0
+    "projectileDamage": 3.0
   },
   
   "enemies": [
